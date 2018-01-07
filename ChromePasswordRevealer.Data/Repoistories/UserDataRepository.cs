@@ -1,4 +1,4 @@
-﻿using ChromePasswordRevealer.Data.Context.Abstract;
+﻿using ChromePasswordRevealer.Data.DataContext.Abstract;
 using ChromePasswordRevealer.Data.Extensions;
 using ChromePasswordRevealer.Data.Models;
 using ChromePasswordRevealer.Data.Repoistories.Abstract;
