@@ -2,6 +2,8 @@
 using ChromePasswordRevealer.Data.Connection_String.Abstract;
 using ChromePasswordRevealer.Data.DataContext;
 using ChromePasswordRevealer.Data.DataContext.Abstract;
+using ChromePasswordRevealer.Data.Encryption;
+using ChromePasswordRevealer.Data.Encryption.Abstract;
 using ChromePasswordRevealer.Data.Repoistories;
 using ChromePasswordRevealer.Data.Repoistories.Abstract;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +20,7 @@ namespace ChromePasswordRevealer.Data.Extensions
             serviceCollection.AddScoped<IContext, Context>();
             serviceCollection.AddScoped<IConnectionString, ConnectionString>();
             serviceCollection.AddScoped<IUserDataRepository, UserDataRepository>();
+            serviceCollection.AddScoped<IEncryption, DPAPIFacade>();
 
             return serviceCollection;
         }

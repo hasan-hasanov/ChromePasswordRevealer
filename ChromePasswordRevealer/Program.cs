@@ -14,7 +14,16 @@ namespace ChromePasswordRevealer
                .BuildServiceProvider();
 
             IUserDataRepository repository = serviceProvider.GetService<IUserDataRepository>();
-            var a = repository.GetAllUserData();
+            var userData = repository.GetAllUserData();
+
+            foreach (var data in userData)
+            {
+                Console.WriteLine($"Username: {data.UserName}");
+                Console.WriteLine($"URL: {data.URL}");
+                Console.WriteLine($"Password: {data.Password}");
+
+                Console.WriteLine();
+            }
         }
     }
 }
