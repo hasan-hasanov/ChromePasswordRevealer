@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Linq;
 using System.Text;
 
 namespace ChromePasswordRevealer.Data.DataContext
@@ -18,7 +19,7 @@ namespace ChromePasswordRevealer.Data.DataContext
             this._connectionString = connectionString;
         }
 
-        public IEnumerable<T> ExecuteQuery<T>(string query, Func<IDataRecord, T> materializeTable)
+        public List<T> ExecuteQuery<T>(string query, Func<IDataRecord, T> materializeTable)
         {
             using (SQLiteConnection sqLite = new SQLiteConnection(_connectionString.GetConnectionString()))
             {
@@ -27,8 +28,9 @@ namespace ChromePasswordRevealer.Data.DataContext
                 using (SQLiteCommand cmd = sqLite.CreateCommand())
                 {
                     cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = query;
 
-                    return cmd.Materialize(materializeTable);
+                    return cmd.Materialize(materializeTable).ToList();
                 }
             }
         }

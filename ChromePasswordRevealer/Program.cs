@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ChromePasswordRevealer.Data.Extensions;
+using ChromePasswordRevealer.Data.Repoistories.Abstract;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace ChromePasswordRevealer
 {
@@ -6,7 +9,12 @@ namespace ChromePasswordRevealer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var serviceProvider = new ServiceCollection()
+               .RegisterTypes()
+               .BuildServiceProvider();
+
+            IUserDataRepository repository = serviceProvider.GetService<IUserDataRepository>();
+            var a = repository.GetAllUserData();
         }
     }
 }

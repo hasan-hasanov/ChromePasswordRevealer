@@ -11,10 +11,7 @@ namespace ChromePasswordRevealer.Data.Repoistories
 {
     public class UserDataRepository : IUserDataRepository
     {
-        private const string SELECT_ALL_QUERY = @"SELECT action_url, 
-                                                         username_value, 
-                                                         password_value 
-                                                  FROM   logins ";
+        private const string SELECT_ALL_QUERY = "SELECT action_url, username_value, password_value FROM logins";
 
         private readonly IContext _context;
 

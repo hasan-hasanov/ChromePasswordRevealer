@@ -7,6 +7,6 @@ namespace ChromePasswordRevealer.Data.DataContext.Abstract
 {
     public interface IContext
     {
-        IEnumerable<T> ExecuteQuery<T>(string query, Func<IDataRecord, T> func);
+        List<T> ExecuteQuery<T>(string query, Func<IDataRecord, T> func);
     }
 }
