@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/ChromePasswordRevealer/v15
+/ChromePasswordRevealer/bin/
+/ChromePasswordRevealer/obj/
+/ChromePasswordRevealer/obj/
+/ChromePasswordRevealer.Data/bin/
+/ChromePasswordRevealer.Data/obj/
